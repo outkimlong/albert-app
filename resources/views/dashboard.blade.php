@@ -1,0 +1,38 @@
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold uppercase text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Dashboard') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-12">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
+                <div class="p-6 text-gray-900 dark:text-gray-100">
+                   <h1 class="text-xl text-gray-800 dark:text-gray-200 leading-tight font-extrabold"> 
+                        Albert Einstein "{{ __("I have no special talents. I am only passionately curious.") }}" 
+                    </h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="p-6 max-w-7xl mx-auto grid grid-cols-3 gap-6 ">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+            <p class="text-gray-500">Quizzes</p>
+            <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ \App\Models\Quizzes::count() }}</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+            <p class="text-gray-500">Questions</p>
+            <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ \App\Models\Questions::count() }}</p>
+        </div>
+
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
+            <p class="text-gray-500">Users</p>
+            <p class="text-3xl font-bold text-gray-900 dark:text-gray-100">{{ \App\Models\User::count() }}</p>
+        </div>
+    </div>
+    <img src="{{ asset('storage/img/undraw_math_ldpv.svg') }}"
+         class="absolute right-0 bottom-0 h-full opacity-20 pointer-events-none">
+</x-app-layout>
